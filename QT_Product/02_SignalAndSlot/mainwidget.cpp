@@ -57,6 +57,28 @@ MainWidget::MainWidget(QWidget *parent)
     connect(&w,SIGNAL(mysignal()),this,SLOT(dealSub()));
     connect(&w,SIGNAL(mysignal(int,QString)),this,SLOT(dealSlot(int,QString)));
     resize(400,300);
+    //SIGNAL SLOT将函数名字 ->转换为字符串 不进行错误检查
+
+    //Lambda表达式，匿名函数对象
+    //C++11增加的新特性，项目文件： COMFIG += C++11
+    //Qt配合信号一起使用，非常方便
+
+    QPushButton* b4 = new QPushButton(this);
+    b4->setText("Lambda表达式");
+    b4->move(30,40);
+    int a = 10,b = 100;
+    connect(b4,&QPushButton::clicked,
+            [=](bool isCheck)
+            //[=] = :把外部所有的局部变量、类中所有成员以值传递方式
+            //this： 类中所有成员以值传递方式
+            // &: 把外部所有局部变量，引用符号
+            {
+               b4->setText("123");
+               qDebug()<<"11111111";
+               qDebug()<<a<<b;
+               qDebug()<<isCheck;
+            }
+    );
 }
 
 MainWidget::~MainWidget()
