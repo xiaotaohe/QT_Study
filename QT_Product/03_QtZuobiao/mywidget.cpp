@@ -1,11 +1,4 @@
-#include "mywidget.h"
+#ifndef MYWIDGET_CPP
+#define MYWIDGET_CPP
 
-MyWidget::MyWidget(QWidget *parent)
-    : QWidget(parent)
-{
-}
-
-MyWidget::~MyWidget()
-{
-}
-
+#endif // MYWIDGET_CPP
