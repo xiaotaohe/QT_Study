@@ -17,9 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    mybutton.cpp \
     mywidget.cpp
 
 HEADERS += \
+    mybutton.h \
     mywidget.h
 
 # Default rules for deployment.

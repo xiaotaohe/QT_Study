@@ -2,6 +2,8 @@
 #define MYWIDGET_H
 
 #include <QWidget>
+#include<QPushButton>
+#include"mybutton.h"
 
 class MyWidget : public QWidget
 {
